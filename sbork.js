@@ -1,4 +1,8 @@
-module.exports = function (player) {
+const averages = require('./averages');
+
+module.exports = function (player, pos) {
+  if (!pos) pos = 'default';
+
   var heightCoef = -4.592111;
   var weightCoef = 0.361056;
   var fortyYardCoef = -15.159259;
@@ -10,5 +14,14 @@ module.exports = function (player) {
   var shortShuttleCoef = -18.731278;
   var intercept = 181.924227;
 
-  return player.height * heightCoef + player.weight * weightCoef + player.fortyYard * fortyYardCoef + (player.tenYard || 1.527) * tenYardCoef + (player.benchPress || 30.175) * benchPressCoef + player.verticalJump * verticalJumpCoef + player.broadJump * broadJumpCoef + player.threeCone * threeConeCoef + player.shortShuttle * shortShuttleCoef + intercept;
+  return (player.height || averages[pos].height) * heightCoef +
+    (player.weight || averages[pos].weight) * weightCoef +
+    (player.fortyYard || averages[pos].fortyYard) * fortyYardCoef +
+    (player.tenYard || averages[pos].tenYard) * tenYardCoef +
+    (player.benchPress || averages[pos].benchPress) * benchPressCoef +
+    (player.verticalJump || averages[pos].verticalJump) * verticalJumpCoef +
+    (player.broadJump || averages[pos].broadJump) * broadJumpCoef +
+    (player.threeCone || averages[pos].threeCone) * threeConeCoef +
+    (player.shortShuttle || averages[pos].shortShuttle) * shortShuttleCoef +
+    intercept;
 };
