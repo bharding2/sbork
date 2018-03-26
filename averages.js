@@ -1,26 +1,26 @@
 module.exports = {
   cb: {
-    height: 5.917, //
-    weight: 193.2, //
-    fortyYard: 4.47, //
+    height: 5.917,
+    weight: 193.2,
+    fortyYard: 4.47,
     tenYard: 1.53,
-    benchPress: 14.94, //
-    verticalJump: 36.26, //
-    broadJump: 10.16, //
-    threeCone: 6.88, //
-    shortShuttle: 4.17 //
+    benchPress: 14.94,
+    verticalJump: 36.26,
+    broadJump: 10.16,
+    threeCone: 6.88,
+    shortShuttle: 4.17
   },
-  // wr: {
-  //   height: 6.16,
-  //   weight: 213,
-  //   fortyYard: 4.35,
-  //   tenYard: 1.53,
-  //   benchPress: 18,
-  //   verticalJump: 45,
-  //   broadJump: 11.58,
-  //   threeCone: 7.06,
-  //   shortShuttle: 4.3
-  // },
+  wr: {
+    height: 6.0625,
+    weight: 202.3,
+    fortyYard: 4.55,
+    tenYard: 1.53,
+    benchPress: 15.4,
+    verticalJump: 35,
+    broadJump: 10,
+    threeCone: 6.92,
+    shortShuttle: 4.25
+  },
   // fs: {
   //   height: 6.16,
   //   weight: 213,
