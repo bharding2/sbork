@@ -43,17 +43,17 @@ module.exports = {
     threeCone: 7,
     shortShuttle: 4.25
   },
-  // rb: {
-  //   height: 6.16,
-  //   weight: 213,
-  //   fortyYard: 4.35,
-  //   tenYard: 1.53,
-  //   benchPress: 18,
-  //   verticalJump: 45,
-  //   broadJump: 11.58,
-  //   threeCone: 7.06,
-  //   shortShuttle: 4.3
-  // },
+  rb: {
+    height: 6.885,
+    weight: 213.3,
+    fortyYard: 4.59,
+    tenYard: 1.53,
+    benchPress: 20.5,
+    verticalJump: 34.5,
+    broadJump: 9.75,
+    threeCone: 7,
+    shortShuttle: 4.28
+  },
   // te: {
   //   height: 6.16,
   //   weight: 213,
