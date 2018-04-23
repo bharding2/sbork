@@ -65,17 +65,17 @@ module.exports = {
     threeCone: 7.08,
     shortShuttle: 4.37
   },
-  // qb: {
-  //   height: 6.16,
-  //   weight: 213,
-  //   fortyYard: 4.35,
-  //   tenYard: 1.53,
-  //   benchPress: 18,
-  //   verticalJump: 45,
-  //   broadJump: 11.58,
-  //   threeCone: 7.06,
-  //   shortShuttle: 4.3
-  // },
+  qb: {
+    height: 6.2396,
+    weight: 223.1,
+    fortyYard: 4.87,
+    tenYard: 1.53,
+    benchPress: 17.8,
+    verticalJump: 31,
+    broadJump: 9.167,
+    threeCone: 7.09,
+    shortShuttle: 4.34
+  },
   // p: {
   //   height: 6.16,
   //   weight: 213,
