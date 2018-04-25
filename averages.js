@@ -98,17 +98,17 @@ module.exports = {
     threeCone: 7.12,
     shortShuttle: 4.34
   },
-  // ilb: {
-  //   height: 6.16,
-  //   weight: 213,
-  //   fortyYard: 4.35,
-  //   tenYard: 1.53,
-  //   benchPress: 18,
-  //   verticalJump: 45,
-  //   broadJump: 11.58,
-  //   threeCone: 7.06,
-  //   shortShuttle: 4.3
-  // },
+  ilb: {
+    height: 6.1042,
+    weight: 241.5,
+    fortyYard: 4.8,
+    tenYard: 1.53,
+    benchPress: 22.7,
+    verticalJump: 33,
+    broadJump: 9.7,
+    threeCone: 7.1,
+    shortShuttle: 4.31
+  },
   // fb: {
   //   height: 6.16,
   //   weight: 213,
