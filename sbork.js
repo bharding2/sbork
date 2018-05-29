@@ -3,16 +3,16 @@ const averages = require('./averages');
 module.exports = function (player, pos) {
   if (!pos) pos = 'default';
 
-  var heightCoef = -4.592111;
-  var weightCoef = 0.361056;
-  var fortyYardCoef = -15.159259;
-  var tenYardCoef = -45.532307;
-  var benchPressCoef = 0.252199;
-  var verticalJumpCoef = 1.32729;
-  var broadJumpCoef = 9.557272;
-  var threeConeCoef = -5.985102;
-  var shortShuttleCoef = -18.731278;
-  var intercept = 181.924227;
+  let heightCoef = -4.592111;
+  let weightCoef = 0.361056;
+  let fortyYardCoef = -15.159259;
+  let tenYardCoef = -45.532307;
+  let benchPressCoef = 0.252199;
+  let verticalJumpCoef = 1.32729;
+  let broadJumpCoef = 9.557272;
+  let threeConeCoef = -5.985102;
+  let shortShuttleCoef = -18.731278;
+  let intercept = 181.924227;
 
   return (player.height || averages[pos].height) * heightCoef +
     (player.weight || averages[pos].weight) * weightCoef +
