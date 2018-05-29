@@ -2,7 +2,7 @@
   "name": "sbork",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "hapi": "^17.5.0",
     "nodemon": "^1.17.5"
