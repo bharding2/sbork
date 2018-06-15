@@ -153,17 +153,17 @@ module.exports = {
     threeCone: 7.84,
     shortShuttle: 4.85
   },
-  // oc: {
-  //   height: 6.16,
-  //   weight: 213,
-  //   fortyYard: 4.35,
-  //   tenYard: 1.53,
-  //   benchPress: 18,
-  //   verticalJump: 45,
-  //   broadJump: 11.58,
-  //   threeCone: 7.06,
-  //   shortShuttle: 4.3
-  // },
+  oc: {
+    height: 6.271,
+    weight: 303.3,
+    fortyYard: 5.3,
+    tenYard: 1.53,
+    benchPress: 27.3,
+    verticalJump: 27,
+    broadJump: 8.333,
+    threeCone: 7.7,
+    shortShuttle: 4.66
+  },
   // dt: {
   //   height: 6.16,
   //   weight: 213,
