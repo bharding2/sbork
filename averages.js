@@ -175,15 +175,15 @@ module.exports = {
     threeCone: 7.64,
     shortShuttle: 4.66
   },
-  // nt: {
-  //   height: 6.16,
-  //   weight: 213,
-  //   fortyYard: 4.35,
-  //   tenYard: 1.53,
-  //   benchPress: 18,
-  //   verticalJump: 45,
-  //   broadJump: 11.58,
-  //   threeCone: 7.06,
-  //   shortShuttle: 4.3
-  // }
+  nt: {
+    height: 6.2396,
+    weight: 304.8,
+    fortyYard: 5.13,
+    tenYard: 1.53,
+    benchPress: 28.3,
+    verticalJump: 29,
+    broadJump: 8.75,
+    threeCone: 7.64,
+    shortShuttle: 4.66
+  }
 };
