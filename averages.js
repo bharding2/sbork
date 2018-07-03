@@ -1,4 +1,4 @@
-module.exports = {
+let averages = {
   cb: {
     height: 5.917,
     weight: 193.2,
@@ -76,17 +76,6 @@ module.exports = {
     threeCone: 7.09,
     shortShuttle: 4.34
   },
-  // p: {
-  //   height: 6.16,
-  //   weight: 213,
-  //   fortyYard: 4.35,
-  //   tenYard: 1.53,
-  //   benchPress: 18,
-  //   verticalJump: 45,
-  //   broadJump: 11.58,
-  //   threeCone: 7.06,
-  //   shortShuttle: 4.3
-  // },
   olb: {
     height: 6.1146,
     weight: 238.1,
@@ -186,4 +175,34 @@ module.exports = {
     threeCone: 7.64,
     shortShuttle: 4.66
   }
+  // p: {
+  //   height: 6.16,
+  //   weight: 213,
+  //   fortyYard: 4.35,
+  //   tenYard: 1.53,
+  //   benchPress: 18,
+  //   verticalJump: 45,
+  //   broadJump: 11.58,
+  //   threeCone: 7.06,
+  //   shortShuttle: 4.3
+  // },
 };
+
+let positionKeys = Object.keys(averages);
+let skillKeys = Object.keys(averages.cb);
+let defaults = {};
+
+skillKeys.forEach((skill) => {
+  let skillTotal = 0;
+
+  positionKeys.forEach((position) => {
+    skillTotal += averages[position][skill];
+  });
+
+  defaults[skill] = skillTotal / positionKeys.length;
+});
+
+averages.defaults = defaults;
+console.log(averages.defaults);
+
+module.exports = averages;
