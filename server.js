@@ -1,12 +1,16 @@
 const hapi = require('hapi');
-const mongoose = require('mongoose');
-const Player = require('./models/player');
+const pgp = require('pg-promise')();
 
-mongoose.connect('mongodb://sbork:sb0rkus3r@ds111492.mlab.com:11492/sbork');
+// const mongoose = require('mongoose');
+// const Player = require('./models/player');
 
-mongoose.connection.once('open', () => {
-  console.log('database connected');
-});
+// mongoose.connect('mongodb://sbork:sb0rkus3r@ds111492.mlab.com:11492/sbork');
+
+// mongoose.connection.once('open', () => {
+//   console.log('database connected');
+// });
+
+const db = pgp('postgres://lvlffixc:plPkzgl7k3Q5RukWoJuua-VXw4eeivdb@stampy.db.elephantsql.com:5432/lvlffixc');
 
 const server = hapi.server({
   port: 5555,
