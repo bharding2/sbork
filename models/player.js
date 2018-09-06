@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const PlayerSchema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
+  birthDate: Date,
+  college: String,
+  draftYear: Number,
   height: Number,
   weight: Number,
   fortyYard: Number,
