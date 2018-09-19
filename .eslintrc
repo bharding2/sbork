@@ -1,6 +1,9 @@
 {
   "rules": {
     "no-console": 0,
+    "no-unused-vars": [
+      "error", { "args": "none" }
+    ],
     "indent": [
       2,
       2
@@ -31,11 +34,16 @@
     "before": false,
     "after": false
   },
+  "sourceType": "module",
   "ecmaFeatures": {
     "modules": true,
+    "jsx": true,
     "experimentalObjectRestSpread": true,
     "impliedStrict": true
   },
+  "plugins": [
+    "react"
+  ],
   "extends": "eslint:recommended",
   "parserOptions": {
     "ecmaVersion": 2017
