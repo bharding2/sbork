@@ -1,7 +1,7 @@
 const averages = require('./averages');
 
 module.exports = function (player, pos) {
-  if (!pos) pos = 'default';
+  if (!pos) pos = 'defaults';
 
   let heightCoef = -4.592111;
   let weightCoef = 0.361056;
