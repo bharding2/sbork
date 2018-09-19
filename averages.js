@@ -203,6 +203,5 @@ skillKeys.forEach((skill) => {
 });
 
 averages.defaults = defaults;
-console.log(averages.defaults);
 
 module.exports = averages;
