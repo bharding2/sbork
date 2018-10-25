@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import sbork from '../sbork';
-import './Player.css';
+import './PlayerRow.css';
 
 let samplePlayer = {
   name: 'sample player',
@@ -16,7 +16,7 @@ let samplePlayer = {
   shortShuttle: 4.06
 };
 
-class Player extends Component {
+class PlayerRow extends Component {
   constructor(props) {
     super(props);
   }
@@ -42,4 +42,4 @@ class Player extends Component {
   }
 }
 
-export default Player;
+export default PlayerRow;
