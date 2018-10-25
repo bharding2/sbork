@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Player from './Player';
+import './App.css';
 
 let samplePlayer = {
   name: 'sample player',
@@ -75,39 +76,50 @@ class App extends Component {
         <h1>sBork</h1>
 
         <form onChange={ this.handleChange } onSubmit={ this.handleSubmit }>
-          <label for="name">name
+          <p>
+            <label for="name">name</label>
             <textarea id="name" value={ this.state.userInput.name } />
-          </label><br />
-          <label for="position">position
+          </p>
+          <p>
+            <label for="position">position</label>
             <textarea id="position" value={ this.state.userInput.position } />
-          </label><br />
-          <label for="height">height
+          </p>
+          <p>
+            <label for="height">height</label>
             <textarea id="height" value={ this.state.userInput.height } />
-          </label><br />
-          <label for="weight">weight
+          </p>
+          <p>
+            <label for="weight">weight</label>
             <textarea id="weight" value={ this.state.userInput.weight } />
-          </label><br />
-          <label for="fortyYard">fortyYard
+          </p>
+          <p>
+            <label for="fortyYard">fortyYard</label>
             <textarea id="fortyYard" value={ this.state.userInput.fortyYard } />
-          </label><br />
-          <label for="tenYard">tenYard
+          </p>
+          <p>
+            <label for="tenYard">tenYard</label>
             <textarea id="tenYard" value={ this.state.userInput.tenYard } />
-          </label><br />
-          <label for="benchPress">benchPress
+          </p>
+          <p>
+            <label for="benchPress">benchPress</label>
             <textarea id="benchPress" value={ this.state.userInput.benchPress } />
-          </label><br />
-          <label for="verticalJump">verticalJump
+          </p>
+          <p>
+            <label for="verticalJump">verticalJump</label>
             <textarea id="verticalJump" value={ this.state.userInput.verticalJump } />
-          </label><br />
-          <label for="broadJump">broadJump
+          </p>
+          <p>
+            <label for="broadJump">broadJump</label>
             <textarea id="broadJump" value={ this.state.userInput.broadJump } />
-          </label><br />
-          <label for="threeCone">threeCone
+          </p>
+          <p>
+            <label for="threeCone">threeCone</label>
             <textarea id="threeCone" value={ this.state.userInput.threeCone } />
-          </label><br />
-          <label for="shortShuttle">shortShuttle
+          </p>
+          <p>
+            <label for="shortShuttle">shortShuttle</label>
             <textarea id="shortShuttle" value={ this.state.userInput.shortShuttle } />
-          </label><br />
+          </p>
           <input type="submit" value="Create Player" />
         </form>
         
