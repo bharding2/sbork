@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PlayerRow from './PlayerRow';
 import './PlayerForm.css';
 
 class PlayerForm extends Component {
