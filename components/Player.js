@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import sbork from '../sbork';
+import './Player.css';
 
 let samplePlayer = {
   name: 'sample player',
