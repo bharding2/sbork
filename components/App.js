@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Player from './Player';
+import PlayerForm from './PlayerForm';
+import PlayerRow from './PlayerRow';
 import './App.css';
 
 let samplePlayer = {
@@ -21,9 +22,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      userInput: {
-        name: ''
-      },
+      userInput: {},
       players: [samplePlayer]
     };
 
@@ -67,7 +66,7 @@ class App extends Component {
   render() {
     let players = this.state.players.map((player, idx) => {
       return (
-        <Player name={ idx } player={ player } handleRemove={ this.handleRemove }/>
+        <PlayerRow key={ idx } player={ player } handleRemove={ this.handleRemove }/>
       );
     })
 
@@ -75,53 +74,7 @@ class App extends Component {
       <div>
         <h1>sBork</h1>
 
-        <form onChange={ this.handleChange } onSubmit={ this.handleSubmit }>
-          <p>
-            <label for="name">name</label>
-            <textarea id="name" value={ this.state.userInput.name } />
-          </p>
-          <p>
-            <label for="position">position</label>
-            <textarea id="position" value={ this.state.userInput.position } />
-          </p>
-          <p>
-            <label for="height">height</label>
-            <textarea id="height" value={ this.state.userInput.height } />
-          </p>
-          <p>
-            <label for="weight">weight</label>
-            <textarea id="weight" value={ this.state.userInput.weight } />
-          </p>
-          <p>
-            <label for="fortyYard">fortyYard</label>
-            <textarea id="fortyYard" value={ this.state.userInput.fortyYard } />
-          </p>
-          <p>
-            <label for="tenYard">tenYard</label>
-            <textarea id="tenYard" value={ this.state.userInput.tenYard } />
-          </p>
-          <p>
-            <label for="benchPress">benchPress</label>
-            <textarea id="benchPress" value={ this.state.userInput.benchPress } />
-          </p>
-          <p>
-            <label for="verticalJump">verticalJump</label>
-            <textarea id="verticalJump" value={ this.state.userInput.verticalJump } />
-          </p>
-          <p>
-            <label for="broadJump">broadJump</label>
-            <textarea id="broadJump" value={ this.state.userInput.broadJump } />
-          </p>
-          <p>
-            <label for="threeCone">threeCone</label>
-            <textarea id="threeCone" value={ this.state.userInput.threeCone } />
-          </p>
-          <p>
-            <label for="shortShuttle">shortShuttle</label>
-            <textarea id="shortShuttle" value={ this.state.userInput.shortShuttle } />
-          </p>
-          <input type="submit" value="Create Player" />
-        </form>
+        <PlayerForm userInput={ this.state.userInput } handleChange={ this.handleChange } handleSubmit={ this.handleSubmit } />
         
         <table>
           <tbody>
