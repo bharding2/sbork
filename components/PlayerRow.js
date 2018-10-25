@@ -2,20 +2,6 @@ import React, { Component } from 'react';
 import sbork from '../sbork';
 import './PlayerRow.css';
 
-let samplePlayer = {
-  name: 'sample player',
-  position: 'cb',
-  height: 5.77,
-  weight: 177,
-  fortyYard: 4.5,
-  tenYard: 1.45,
-  benchPress: 15,
-  verticalJump: 40,
-  broadJump: 11,
-  threeCone: 6.56,
-  shortShuttle: 4.06
-};
-
 class PlayerRow extends Component {
   constructor(props) {
     super(props);
