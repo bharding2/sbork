@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PlayerForm from './PlayerForm';
-import PlayerRow from './PlayerRow';
+import PlayerTable from './PlayerTable';
 import './App.css';
 
 let samplePlayer = {
@@ -64,37 +64,13 @@ class App extends Component {
   }
 
   render() {
-    let players = this.state.players.map((player, idx) => {
-      return (
-        <PlayerRow key={ idx } player={ player } handleRemove={ this.handleRemove }/>
-      );
-    })
-
     return (
       <div>
         <h1>sBork</h1>
 
         <PlayerForm userInput={ this.state.userInput } handleChange={ this.handleChange } handleSubmit={ this.handleSubmit } />
         
-        <table>
-          <tbody>
-            <tr>
-              <th>name</th>
-              <th>position</th>
-              <th>height</th>
-              <th>weight</th>
-              <th>fortyYard</th>
-              <th>tenYard</th>
-              <th>benchPress</th>
-              <th>verticalJump</th>
-              <th>broadJump</th>
-              <th>threeCone</th>
-              <th>shortShuttle</th>
-              <th>sbork</th>
-            </tr>
-            { players }
-          </tbody>
-        </table>
+        <PlayerTable players={ this.state.players } handleRemove={ this.handleRemove }/>
       </div>
     );
   }
