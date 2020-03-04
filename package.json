@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "hapi": "^17.5.0",
+    "@hapi/hapi": "^19.1.1",
     "mongoose": "^5.9.3",
     "nodemon": "^1.17.5",
     "pg-promise": "^8.4.6"
@@ -39,7 +39,9 @@
     "test": "jest"
   },
   "jest": {
-    "setupFilesAfterEnv": ["./src/setupTests.js"],
+    "setupFilesAfterEnv": [
+      "./src/setupTests.js"
+    ],
     "moduleNameMapper": {
       "\\.(css|scss)$": "identity-obj-proxy"
     }
