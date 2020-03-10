@@ -1,7 +1,7 @@
 import * as React from 'react';
-import {shallow} from 'enzyme';
-import {SborkApp, samplePlayer} from './SborkApp';
-import {PlayerTable} from './PlayerTable';
+import { shallow } from 'enzyme';
+import { SborkApp, samplePlayer } from './SborkApp';
+import { PlayerTable } from './PlayerTable';
 
 describe('SborkApp', () => {
   it('should render a sbork app', () => {
@@ -21,7 +21,7 @@ describe('SborkApp', () => {
 interface OptionalProps {}
 
 const shallowRender = (props: OptionalProps) => {
-  return shallow(<SborkApp {...makeProps(props)} />)
+  return shallow(<SborkApp { ...makeProps(props) } />)
 };
 
 const makeProps = (props: OptionalProps) => {

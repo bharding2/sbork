@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {FunctionComponent, useState} from 'react';
-import {PlayerTable} from './PlayerTable';
+import { FunctionComponent, useState } from 'react';
+import { PlayerTable } from './PlayerTable';
 import './SborkApp.scss'
 
 export interface Player {
@@ -38,7 +38,7 @@ export const SborkApp: FunctionComponent = () => {
     <div className="SborkApp">
       <div className="SborkApp-title">Sbork App</div>
       <PlayerTable
-        players={players}
+        players={ players }
       />
     </div>
   );
