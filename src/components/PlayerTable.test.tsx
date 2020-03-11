@@ -43,6 +43,6 @@ const shallowRender = (props: OptionalProps) => {
 
 const makeProps = (props: OptionalProps) => {
   return {
-    players: props.players || []
+    players: props.players || [],
   };
 };

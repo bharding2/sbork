@@ -2,6 +2,9 @@ import { Player } from "../components/SborkApp";
 
 export const arbitraryPlayer: Player = {
   name: '',
+  dob: '',
+  college: '',
+  draftYear: '',
   position: '',
   height: 0,
   weight: 0,
