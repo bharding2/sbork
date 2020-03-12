@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { SborkApp, samplePlayer } from './SborkApp';
+import { PlayerForm } from './PlayerForm';
 import { PlayerTable } from './PlayerTable';
 
 describe('SborkApp', () => {
@@ -8,6 +9,12 @@ describe('SborkApp', () => {
     const subject = shallowRender({});
 
     expect(subject.find('.SborkApp').exists()).toBe(true);
+  });
+
+  it('should render a PlayerForm', () => {
+    const subject = shallowRender({});
+
+    expect(subject.find(PlayerForm).exists()).toBe(true);
   });
 
   it('should render a PlayerTable', () => {
