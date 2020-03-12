@@ -45,6 +45,13 @@ export const SborkApp: FunctionComponent = () => {
     setPlayers([...players, newPlayer]);
   }
 
+  const removePlayer = (index) => {
+    const currentPlayers = [...players];
+    currentPlayers.splice(index, 1);
+
+    setPlayers(currentPlayers);
+  }
+
   return (
     <div className="SborkApp">
       <div className="SborkApp-title">Sbork App</div>
@@ -53,6 +60,7 @@ export const SborkApp: FunctionComponent = () => {
       />
       <PlayerTable
         players={ players }
+        removePlayer={ removePlayer }
       />
     </div>
   );

@@ -31,10 +31,36 @@ describe('PlayerTable', () => {
 
     expect(subject.find('.PlayerTable-row').length).toBe(3);
   });
+
+  it('should remove player rows', () => {
+    const players = [
+      {
+        ...arbitraryPlayer,
+        name: 'Anomander Rake',
+      },
+      {
+        ...arbitraryPlayer,
+        name: 'Caladan Brood',
+      },
+      {
+        ...arbitraryPlayer,
+        name: 'Ben Adaephon Delat',
+      },
+    ];
+
+    const removePlayer = jest.fn();
+
+    const subject = shallowRender({ players, removePlayer });
+
+    subject.find('.PlayerTable-row-remove').at(1).simulate('click');
+
+    expect(removePlayer).toHaveBeenCalledWith(1);
+  });
 });
 
 interface OptionalProps {
   players?: Player[];
+  removePlayer?: (index) => void;
 }
 
 const shallowRender = (props: OptionalProps) => {
@@ -44,5 +70,6 @@ const shallowRender = (props: OptionalProps) => {
 const makeProps = (props: OptionalProps) => {
   return {
     players: props.players || [],
+    removePlayer: props.removePlayer || (() => {}),
   };
 };
