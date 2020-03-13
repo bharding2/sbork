@@ -56,11 +56,37 @@ describe('PlayerTable', () => {
 
     expect(removePlayer).toHaveBeenCalledWith(1);
   });
+
+  it('should edit a player', () => {
+    const players = [
+      {
+        ...arbitraryPlayer,
+        name: 'Anomander Rake',
+      },
+      {
+        ...arbitraryPlayer,
+        name: 'Caladan Brood',
+      },
+      {
+        ...arbitraryPlayer,
+        name: 'Ben Adaephon Delat',
+      },
+    ];
+
+    const setEditPlayerIndex = jest.fn();
+
+    const subject = shallowRender({ players, setEditPlayerIndex });
+
+    subject.find('.PlayerTable-row-edit').at(2).simulate('click');
+
+    expect(setEditPlayerIndex).toHaveBeenCalledWith(2);
+  });
 });
 
 interface OptionalProps {
   players?: Player[];
   removePlayer?: (index) => void;
+  setEditPlayerIndex?: (index) => void;
 }
 
 const shallowRender = (props: OptionalProps) => {
@@ -71,5 +97,6 @@ const makeProps = (props: OptionalProps) => {
   return {
     players: props.players || [],
     removePlayer: props.removePlayer || (() => {}),
+    setEditPlayerIndex: props.setEditPlayerIndex || (() => {}),
   };
 };
