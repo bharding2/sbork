@@ -1,14 +1,22 @@
 import * as React from 'react';
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useState, useEffect } from 'react';
 import { Player } from './SborkApp';
 import './PlayerForm.scss'
 
 interface Props {
+  player: Player
   addPlayer: (newPlayer: Player) => void;
+  editPlayer: (newPlayer: Player) => void;
 }
 
 export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
-  const [newPlayer, setNewPlayer] = useState<Player>({name: ''} as Player);
+  const [newPlayer, setNewPlayer] = useState<Player>();
+
+  useEffect(() => {
+    if (props.player !== undefined) {
+      setNewPlayer(props.player);
+    }
+  }, [props.player]);
 
   const handleChange = (event) => {
     const userInputPlayer = {
@@ -22,8 +30,13 @@ export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    props.addPlayer(newPlayer);
-    setNewPlayer({name: ''} as Player);
+    if (props.player !== undefined) {
+      props.editPlayer(newPlayer);
+    } else {
+      props.addPlayer(newPlayer);
+    }
+
+    setNewPlayer(undefined);
   };
 
   return (
@@ -36,7 +49,7 @@ export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
           <textarea 
             onChange={ handleChange }
             name="name"
-            value={ newPlayer.name }
+            value={ newPlayer && newPlayer.name || '' }
           />
         </p>
         <p>
@@ -44,7 +57,7 @@ export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
           <textarea
             onChange={ handleChange } 
             name="position"
-            value={ newPlayer.position }
+            value={ newPlayer && newPlayer.position || '' }
           />
         </p>
         <p>
@@ -52,7 +65,7 @@ export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
           <textarea
             onChange={ handleChange } 
             name="height"
-            value={ newPlayer.height }
+            value={ newPlayer && newPlayer.height || '' }
           />
         </p>
         <p>
@@ -60,7 +73,7 @@ export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
           <textarea
             onChange={ handleChange } 
             name="weight"
-            value={ newPlayer.weight }
+            value={ newPlayer && newPlayer.weight || '' }
           />
         </p>
         <p>
@@ -68,7 +81,7 @@ export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
           <textarea
             onChange={ handleChange } 
             name="fortyYard"
-            value={ newPlayer.fortyYard }
+            value={ newPlayer && newPlayer.fortyYard || '' }
           />
         </p>
         <p>
@@ -76,7 +89,7 @@ export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
           <textarea
             onChange={ handleChange } 
             name="tenYard"
-            value={ newPlayer.tenYard }
+            value={ newPlayer && newPlayer.tenYard || '' }
           />
         </p>
         <p>
@@ -84,7 +97,7 @@ export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
           <textarea
             onChange={ handleChange } 
             name="benchPress"
-            value={ newPlayer.benchPress }
+            value={ newPlayer && newPlayer.benchPress || '' }
           />
         </p>
         <p>
@@ -92,7 +105,7 @@ export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
           <textarea
             onChange={ handleChange } 
             name="verticalJump"
-            value={ newPlayer.verticalJump }
+            value={ newPlayer && newPlayer.verticalJump || '' }
           />
         </p>
         <p>
@@ -100,7 +113,7 @@ export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
           <textarea
             onChange={ handleChange } 
             name="broadJump"
-            value={ newPlayer.broadJump }
+            value={ newPlayer && newPlayer.broadJump || '' }
           />
         </p>
         <p>
@@ -108,7 +121,7 @@ export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
           <textarea
             onChange={ handleChange } 
             name="threeCone"
-            value={ newPlayer.threeCone }
+            value={ newPlayer && newPlayer.threeCone || '' }
           />
         </p>
         <p>
@@ -116,12 +129,12 @@ export const PlayerForm: FunctionComponent<Props> = (props: Props) => {
           <textarea
             onChange={ handleChange } 
             name="shortShuttle"
-            value={ newPlayer.shortShuttle }
+            value={ newPlayer && newPlayer.shortShuttle || '' }
           />
         </p>
         <input 
           type="submit"
-          value="CreatePlayer"
+          value={ props.player !== undefined ? 'Edit Player' : 'Create Player' }
         />
       </form>
     </div>

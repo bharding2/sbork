@@ -7,6 +7,7 @@ import './PlayerTable.scss'
 interface Props {
   players: Player[];
   removePlayer: (index) => void;
+  setEditPlayerIndex: (index) => void;
 }
 
 export const PlayerTable: FunctionComponent<Props> = (props: Props) => {
@@ -43,6 +44,12 @@ export const PlayerTable: FunctionComponent<Props> = (props: Props) => {
                 <td>{ player.threeCone }s</td>
                 <td>{ player.shortShuttle }s</td>
                 <td>{ sbork(player, player.position).toFixed(2) }</td>
+                <td
+                  className="PlayerTable-row-edit"
+                  onClick={() => props.setEditPlayerIndex(index)}
+                >
+                  Edit
+                </td>
                 <td
                   className="PlayerTable-row-remove"
                   onClick={() => props.removePlayer(index)}

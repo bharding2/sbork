@@ -38,10 +38,47 @@ describe('PlayerForm', () => {
     expect(preventDefault).toHaveBeenCalled();
     expect(nameTextArea().prop('value')).toBe('');
   });
+
+  it('should edit a player', () => {
+    const player = {
+      ...arbitraryPlayer,
+      name: 'Dongle',
+    }
+
+    const expectedPlayer = {
+      ...arbitraryPlayer,
+      name: 'Tingle',
+    };
+
+    const addPlayer = jest.fn();
+    const editPlayer = jest.fn()
+
+    const subject = shallowRender({player, addPlayer, editPlayer});
+
+    const getAttribute = jest.fn();
+    getAttribute.mockReturnValue('name');
+
+    const nameTextArea = () => subject.find('textarea').at(0);
+
+    nameTextArea().simulate('change', { target: { value: 'Tingle', getAttribute } });
+    
+    expect(nameTextArea().prop('value')).toBe('Tingle');
+
+    const preventDefault = jest.fn();
+
+    subject.find('form').simulate('submit', { preventDefault });
+
+    expect(editPlayer).toHaveBeenCalled();
+    expect(addPlayer).not.toHaveBeenCalled();
+    expect(preventDefault).toHaveBeenCalled();
+    expect(nameTextArea().prop('value')).toBe('');
+  });
 });
 
 interface OptionalProps {
+  player?: Player;
   addPlayer?: (newPlayer: Player) => void;
+  editPlayer?: (newPlayer: Player) => void;
 }
 
 const shallowRender = (props: OptionalProps) => {
@@ -50,6 +87,8 @@ const shallowRender = (props: OptionalProps) => {
 
 const makeProps = (props: OptionalProps) => {
   return {
+    player: props.editPlayer,
     addPlayer: props.addPlayer || (() => {}),
+    editPlayer: props.editPlayer || (() => {}),
   }
 };
