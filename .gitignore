@@ -5,6 +5,8 @@
 /coverage
 /test/bundle.j*
 
+.env
+
 HELP.md
 .gradle
 /build/
