@@ -13,7 +13,7 @@ describe('PlayerForm', () => {
 
   it('should add a player', () => {
     const expectedPlayer = {
-      ...arbitraryPlayer,
+      ...arbitraryPlayer(),
       name: 'Tingle',
     };
 
@@ -41,12 +41,12 @@ describe('PlayerForm', () => {
 
   it('should edit a player', () => {
     const player = {
-      ...arbitraryPlayer,
+      ...arbitraryPlayer(),
       name: 'Dongle',
     }
 
     const expectedPlayer = {
-      ...arbitraryPlayer,
+      ...arbitraryPlayer(),
       name: 'Tingle',
     };
 

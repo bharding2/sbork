@@ -14,15 +14,15 @@ describe('PlayerTable', () => {
   it('should render player rows', () => {
     const players = [
       {
-        ...arbitraryPlayer,
+        ...arbitraryPlayer(),
         name: 'Anomander Rake',
       },
       {
-        ...arbitraryPlayer,
+        ...arbitraryPlayer(),
         name: 'Caladan Brood',
       },
       {
-        ...arbitraryPlayer,
+        ...arbitraryPlayer(),
         name: 'Ben Adaephon Delat',
       },
     ];
@@ -35,15 +35,15 @@ describe('PlayerTable', () => {
   it('should remove player rows', () => {
     const players = [
       {
-        ...arbitraryPlayer,
+        ...arbitraryPlayer(),
         name: 'Anomander Rake',
       },
       {
-        ...arbitraryPlayer,
+        ...arbitraryPlayer(),
         name: 'Caladan Brood',
       },
       {
-        ...arbitraryPlayer,
+        ...arbitraryPlayer(),
         name: 'Ben Adaephon Delat',
       },
     ];
@@ -60,15 +60,15 @@ describe('PlayerTable', () => {
   it('should edit a player', () => {
     const players = [
       {
-        ...arbitraryPlayer,
+        ...arbitraryPlayer(),
         name: 'Anomander Rake',
       },
       {
-        ...arbitraryPlayer,
+        ...arbitraryPlayer(),
         name: 'Caladan Brood',
       },
       {
-        ...arbitraryPlayer,
+        ...arbitraryPlayer(),
         name: 'Ben Adaephon Delat',
       },
     ];
