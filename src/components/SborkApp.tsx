@@ -1,25 +1,10 @@
 import * as React from 'react';
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useState, useContext, useEffect } from 'react';
 import { PlayerForm } from './PlayerForm';
 import { PlayerTable } from './PlayerTable';
 import './SborkApp.scss'
-
-export interface Player {
-  name: string;
-  dob?: string;
-  college?: string;
-  draftYear?: string;
-  position?: string;
-  height?: number;
-  weight?: number;
-  fortyYard?: number;
-  tenYard?: number;
-  benchPress?: number;
-  verticalJump?: number;
-  broadJump?: number;
-  threeCone?: number;
-  shortShuttle?: number;
-}
+import { PlayerApiContext } from '../contexts/PlayerApiContext';
+import { Player } from '../apis/PlayerApi';
 
 export const samplePlayer: Player = {
   name: 'sample player',

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { FunctionComponent, useState, useEffect } from 'react';
-import { Player } from './SborkApp';
 import './PlayerForm.scss'
+import { Player } from '../apis/PlayerApi';
 
 interface Props {
-  player: Player
+  player?: Player;
   addPlayer: (newPlayer: Player) => void;
   editPlayer: (newPlayer: Player) => void;
 }

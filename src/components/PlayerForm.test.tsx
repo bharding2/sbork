@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { PlayerForm } from './PlayerForm';
-import { Player } from './SborkApp';
 import { arbitraryPlayer } from '../testSupport/arbitraryObjects';
+import { Player } from '../apis/PlayerApi';
 
 describe('PlayerForm', () => {
   it('should render a player form', () => {
@@ -88,7 +88,7 @@ const shallowRender = (props: OptionalProps) => {
 const makeProps = (props: OptionalProps) => {
   return {
     player: props.editPlayer,
-    addPlayer: props.addPlayer || (() => {}),
-    editPlayer: props.editPlayer || (() => {}),
+    addPlayer: props.addPlayer || (() => undefined),
+    editPlayer: props.editPlayer || (() => undefined),
   }
 };

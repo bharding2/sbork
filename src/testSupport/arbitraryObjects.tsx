@@ -1,8 +1,7 @@
-import { Player } from "../components/SborkApp";
+import { Player } from "../apis/PlayerApi";
 
 export const arbitraryPlayer = (): Player => {
   return {
-    id: '',
     name: '',
     dob: '',
     college: '',

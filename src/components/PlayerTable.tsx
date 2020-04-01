@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { FunctionComponent } from 'react';
-import { Player } from './SborkApp';
 import sbork from '../../sbork';
 import './PlayerTable.scss'
+import { Player } from '../apis/PlayerApi';
 
 interface Props {
   players: Player[];

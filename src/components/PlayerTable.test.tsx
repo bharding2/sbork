@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { PlayerTable } from './PlayerTable';
-import { Player } from './SborkApp';
 import { arbitraryPlayer } from '../testSupport/arbitraryObjects';
+import { Player } from '../apis/PlayerApi';
 
 describe('PlayerTable', () => {
   it('should render a player table', () => {
@@ -96,7 +96,7 @@ const shallowRender = (props: OptionalProps) => {
 const makeProps = (props: OptionalProps) => {
   return {
     players: props.players || [],
-    removePlayer: props.removePlayer || (() => {}),
-    setEditPlayerIndex: props.setEditPlayerIndex || (() => {}),
+    removePlayer: props.removePlayer || (() => undefined),
+    setEditPlayerIndex: props.setEditPlayerIndex || (() => undefined),
   };
 };
