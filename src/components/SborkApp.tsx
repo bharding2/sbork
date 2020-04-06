@@ -36,7 +36,7 @@ export const SborkApp: FunctionComponent = () => {
     userEditPlayers[editPlayerIndex] = newPlayer;
 
     setPlayers(userEditPlayers);
-    setEditPlayerIndex(undefined);
+    setEditPlayerIndex(null);
   }
 
   const removePlayer = (index) => {
@@ -50,7 +50,7 @@ export const SborkApp: FunctionComponent = () => {
     <div className="SborkApp">
       <div className="SborkApp-title">Sbork App</div>
       <PlayerForm
-        player = { players[editPlayerIndex] }
+        player={ players[editPlayerIndex] }
         addPlayer={ addPlayer }
         editPlayer={ editPlayer }
       />

@@ -1,5 +1,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { SborkApp } from './components/SborkApp';
+import { App } from './App';
+import { PlayerApiImpl } from './apis/PlayerApi';
+import { PlayerApiContext } from './contexts/PlayerApiContext';
 
-ReactDOM.render(<SborkApp />, document.getElementById('app'));
+const baseUrl = process.env.SBORK_API_URL;
+const playerApi = new PlayerApiImpl(baseUrl);
+
+ReactDOM.render((
+  <PlayerApiContext.Provider value={playerApi}>
+    <App />
+  </PlayerApiContext.Provider>
+), document.getElementById('app'));
