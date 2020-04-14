@@ -1,31 +1,17 @@
 import * as React from 'react';
-import { FunctionComponent, useState, useContext, useEffect } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { PlayerForm } from './PlayerForm';
 import { PlayerTable } from './PlayerTable';
 import './SborkApp.scss'
-import { PlayerApiContext } from '../contexts/PlayerApiContext';
 import { Player } from '../apis/PlayerApi';
 
-export const samplePlayer: Player = {
-  name: 'sample player',
-  dob: '1980-01-01',
-  college: 'University of Slothbear',
-  draftYear: '2000',
-  position: 'cb',
-  height: 5.77,
-  weight: 177,
-  fortyYard: 4.5,
-  tenYard: 1.45,
-  benchPress: 15,
-  verticalJump: 40,
-  broadJump: 11,
-  threeCone: 6.56,
-  shortShuttle: 4.06
-};
+interface Props {
+  players: Player[];
+}
 
-export const SborkApp: FunctionComponent = () => {
-  const [players, setPlayers] = useState<Player[]>([samplePlayer]);
-  const [editPlayerIndex, setEditPlayerIndex] = useState();
+export const SborkApp: FunctionComponent<Props> = (props: Props) => {
+  const [players, setPlayers] = useState<Player[]>(props.players);
+  const [editPlayerIndex, setEditPlayerIndex] = useState(null);
 
   const addPlayer = (newPlayer: Player) => {
     setPlayers([...players, newPlayer]);
