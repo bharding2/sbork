@@ -6,13 +6,11 @@ import { PlayersContainer } from './containers/PlayersContainer';
 export const App: FunctionComponent = () => {
   return (
     <PlayersContainer
-      render={(players) => {
-        return (
-          <SborkApp
-            players={players}
-          />
-        );
-      }}
+      render={(players) => (
+        <SborkApp
+          players={players}
+        />
+      )}
     />
   );
 }

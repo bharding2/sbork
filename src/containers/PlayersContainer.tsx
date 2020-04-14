@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const PlayersContainer: FunctionComponent<Props> = (props: Props) => {
-  const [players, setPlayers] = useState<Player[] | undefined>(undefined);
+  const [players, setPlayers] = useState<Player[]>();
   const [loadingFailed, setLoadingFailed] = useState<boolean>(false);
   const playerApi = React.useContext(PlayerApiContext);
 

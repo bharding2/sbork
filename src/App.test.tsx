@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { act } from 'react-dom/test-utils';
 import { mount } from 'enzyme';
 import { App } from './App';
 import { SborkApp } from './components/SborkApp';
@@ -17,7 +18,10 @@ describe('App', () => {
 
     const subject = mountRender({playerApi});
 
-    await mockPlayerPromise;
+    await act(async () => {
+      await mockPlayerPromise;
+      subject.update();
+    });
 
     expect(subject.find(SborkApp).exists()).toBe(true);
   });
