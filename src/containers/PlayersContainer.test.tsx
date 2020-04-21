@@ -8,10 +8,24 @@ import { stubPlayerApi } from '../testSupport/stubApis';
 import { arbitraryPlayer } from '../testSupport/arbitraryObjects';
 
 describe('PlayersContainer', () => {
-  it('should render a loading div', () => {
-    const subject = mountRender({});
+  it('should render a loading div', async() => {
+    const mockPlayerPromise = Promise.resolve([]);
+    const getPlayers = () => mockPlayerPromise;
+    const playerApi = {
+      ...stubPlayerApi(),
+      getPlayers,
+    }
+
+    const subject = mountRender({playerApi});
 
     expect(subject.find('div').text()).toBe('Loading');
+
+    await act(async () => {
+      await mockPlayerPromise;
+      subject.update();
+    });
+
+    expect(subject.find('div').text()).not.toBe('Loading');
   });
 
   it('should render a loading failed div', async () => {
